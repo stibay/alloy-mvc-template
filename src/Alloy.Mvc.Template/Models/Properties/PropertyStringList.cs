@@ -15,21 +15,9 @@ namespace AlloyTemplates.Models.Properties
     {
         protected String Separator = "\n";
 
-        public String[] List
-        {
-            get
-            {
-                return (String[])Value;
-            }
-        }
+        public String[] List => (String[])Value;
 
-        public override Type PropertyValueType
-        {
-            get
-            {
-                return typeof(String[]);
-            }
-        }
+        public override Type PropertyValueType => typeof(String[]);
 
         public override object SaveData(PropertyDataCollection properties)
         {

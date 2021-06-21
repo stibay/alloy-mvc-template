@@ -53,8 +53,7 @@ namespace AlloyTemplates
         private static bool IsAnyUserRegistered()
         {
             var provider = ServiceLocator.Current.GetInstance<UIUserProvider>();
-            int totalUsers = 0;
-            var res = provider.GetAllUsers(0, 1, out totalUsers);
+            var res = provider.GetAllUsers(0, 1, out int totalUsers);
             return totalUsers > 0;
         }
 

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Web.Mvc;
-using EPiServer;
-using EPiServer.Framework.DataAnnotations;
 using AlloyTemplates.Models.Pages;
 using AlloyTemplates.Models.ViewModels;
+using EPiServer;
+using EPiServer.Framework.DataAnnotations;
 
 namespace AlloyTemplates.Controllers
 {
@@ -22,6 +22,7 @@ namespace AlloyTemplates.Controllers
         public ViewResult Index(SitePageData currentPage)
         {
             var model = CreateModel(currentPage);
+
             return View(string.Format("~/Views/{0}/Index.cshtml", currentPage.GetOriginalType().Name), model);
         }
 
@@ -34,6 +35,7 @@ namespace AlloyTemplates.Controllers
         private static IPageViewModel<SitePageData> CreateModel(SitePageData page)
         {
             var type = typeof(PageViewModel<>).MakeGenericType(page.GetOriginalType());
+
             return Activator.CreateInstance(type, page) as IPageViewModel<SitePageData>;
         }
     }

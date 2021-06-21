@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Web.Mvc;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Core.Html.StringParsing;
 using EPiServer.Web;
-using EPiServer.Web.Mvc;
 using EPiServer.Web.Mvc.Html;
-using EPiServer;
 
 namespace AlloyTemplates.Business.Rendering
 {
@@ -32,6 +31,7 @@ namespace AlloyTemplates.Business.Rendering
             {
                 return "";
             }
+
             switch (tagName.ToLower())
             {
                 case "span12":

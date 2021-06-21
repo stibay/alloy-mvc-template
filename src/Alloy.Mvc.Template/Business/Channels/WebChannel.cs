@@ -8,13 +8,7 @@ namespace AlloyTemplates.Business.Channels
     /// </summary>
     public class WebChannel : DisplayChannel
     {
-        public override string ChannelName
-        {
-            get
-            {
-                return "web";
-            }
-        }
+        public override string ChannelName => "web";
 
         public override bool IsActive(HttpContextBase context)
         {

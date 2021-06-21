@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using EPiServer.Shell.ObjectEditing.EditorDescriptors;
 using EPiServer.Shell.ObjectEditing;
+using EPiServer.Shell.ObjectEditing.EditorDescriptors;
 
 namespace AlloyTemplates.Business.EditorDescriptors
 {

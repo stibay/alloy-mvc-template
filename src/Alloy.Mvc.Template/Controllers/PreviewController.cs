@@ -1,15 +1,15 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using EPiServer.Core;
-using EPiServer.Framework.DataAnnotations;
-using EPiServer.Framework.Web;
 using AlloyTemplates.Business;
 using AlloyTemplates.Models.Pages;
 using AlloyTemplates.Models.ViewModels;
+using EPiServer;
+using EPiServer.Core;
+using EPiServer.Framework.DataAnnotations;
+using EPiServer.Framework.Web;
+using EPiServer.Framework.Web.Mvc;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
-using EPiServer;
-using EPiServer.Framework.Web.Mvc;
 
 namespace AlloyTemplates.Controllers
 {

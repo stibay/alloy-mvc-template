@@ -1,13 +1,13 @@
 ﻿using System.Web;
 using System.Web.Mvc;
-using EPiServer.Core;
 using AlloyTemplates.Helpers;
 using AlloyTemplates.Models.Blocks;
 using AlloyTemplates.Models.Pages;
 using AlloyTemplates.Models.ViewModels;
+using EPiServer;
+using EPiServer.Core;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
-using EPiServer;
 
 namespace AlloyTemplates.Controllers
 {

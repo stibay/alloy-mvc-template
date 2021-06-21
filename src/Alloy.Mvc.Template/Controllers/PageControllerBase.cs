@@ -2,8 +2,8 @@
 using AlloyTemplates.Business;
 using AlloyTemplates.Models.Pages;
 using AlloyTemplates.Models.ViewModels;
-using EPiServer.Web.Mvc;
 using EPiServer.Shell.Security;
+using EPiServer.Web.Mvc;
 
 namespace AlloyTemplates.Controllers
 {
@@ -29,6 +29,7 @@ namespace AlloyTemplates.Controllers
         public ActionResult Logout()
         {
             UISignInManager.Service.SignOut();
+
             return RedirectToAction("Index");
         }
 

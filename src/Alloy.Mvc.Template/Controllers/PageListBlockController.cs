@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using EPiServer.Core;
-using EPiServer.Filters;
 using AlloyTemplates.Business;
 using AlloyTemplates.Models.Blocks;
 using AlloyTemplates.Models.ViewModels;
-using EPiServer.Web.Mvc;
 using EPiServer;
+using EPiServer.Core;
+using EPiServer.Filters;
+using EPiServer.Web.Mvc;
 
 namespace AlloyTemplates.Controllers
 {
@@ -33,9 +33,9 @@ namespace AlloyTemplates.Controllers
             }
 
             var model = new PageListModel(currentBlock)
-                {
-                    Pages = pages
-                };
+            {
+                Pages = pages
+            };
 
             ViewData.GetEditHints<PageListModel, PageListBlock>()
                 .AddConnection(x => x.Heading, x => x.Heading);
@@ -75,6 +75,7 @@ namespace AlloyTemplates.Controllers
             {
                 pages = pages.Where(x => x.Category.Intersect(currentBlock.CategoryFilter).Any());
             }
+
             return pages;
         }
 
@@ -83,6 +84,7 @@ namespace AlloyTemplates.Controllers
             var asCollection = new PageDataCollection(pages);
             var sortFilter = new FilterSort(sortOrder);
             sortFilter.Sort(asCollection);
+
             return asCollection;
         }
     }

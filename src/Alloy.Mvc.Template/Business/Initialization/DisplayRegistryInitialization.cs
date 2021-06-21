@@ -1,9 +1,8 @@
-﻿using EPiServer.Framework;
+﻿using System.Web.Mvc;
+using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
 using EPiServer.Web;
-using System.Collections.Generic;
-using System.Web.Mvc;
 
 namespace AlloyTemplates.Business.Initialization
 {

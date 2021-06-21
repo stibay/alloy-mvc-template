@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using System.Web;
 using System.Web.WebPages;
+using AlloyTemplates.Business.Channels;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
-using AlloyTemplates.Business.Channels;
 using EPiServer.Web;
 
 namespace AlloyTemplates.Business.Initialization
@@ -25,6 +25,7 @@ namespace AlloyTemplates.Business.Initialization
             {
                 ContextCondition = IsMobileDisplayModeActive
             };
+
             DisplayModeProvider.Instance.Modes.Insert(0, mobileChannelDisplayMode);
         }
 
@@ -34,7 +35,9 @@ namespace AlloyTemplates.Business.Initialization
             {
                 return true;
             }
+
             var displayChannelService = ServiceLocator.Current.GetInstance<IDisplayChannelService>();
+
             return displayChannelService.GetActiveChannels(httpContext).Any(x => x.ChannelName == MobileChannel.Name);
         }
 

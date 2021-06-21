@@ -36,9 +36,8 @@ namespace AlloyTemplates.Controllers
         {
             if (ModelState.IsValid)
             {
-                UIUserCreateStatus status;
                 IEnumerable<string> errors = Enumerable.Empty<string>();
-                var result = UIUserProvider.CreateUser(model.Username, model.Password, model.Email, null, null, true, out status, out errors);
+                var result = UIUserProvider.CreateUser(model.Username, model.Password, model.Email, null, null, true, out UIUserCreateStatus status, out errors);
                 if (status == UIUserCreateStatus.Success)
                 {
                     UIRoleProvider.CreateRole(AdminRoleName);
@@ -91,27 +90,9 @@ namespace AlloyTemplates.Controllers
             base.OnAuthorization(filterContext);
         }
 
-        UIUserProvider UIUserProvider
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<UIUserProvider>();
-            }
-        }
-        UIRoleProvider UIRoleProvider
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<UIRoleProvider>();
-            }
-        }
-        UISignInManager UISignInManager
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<UISignInManager>();
-            }
-        }
+        UIUserProvider UIUserProvider => ServiceLocator.Current.GetInstance<UIUserProvider>();
+        UIRoleProvider UIRoleProvider => ServiceLocator.Current.GetInstance<UIRoleProvider>();
+        UISignInManager UISignInManager => ServiceLocator.Current.GetInstance<UISignInManager>();
 
     }
 }

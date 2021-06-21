@@ -6,12 +6,12 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.WebPages;
+using AlloyTemplates.Business;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
-using AlloyTemplates.Business;
 using EPiServer.Web.Mvc.Html;
 using EPiServer.Web.Routing;
-using EPiServer;
 
 namespace AlloyTemplates.Helpers
 {
@@ -93,8 +93,11 @@ namespace AlloyTemplates.Helpers
             {
                 Page = page;
             }
+
             public PageData Page { get; set; }
+
             public bool Selected { get; set; }
+
             public Lazy<bool> HasChildren { get; set; }
         }
 
@@ -122,6 +125,7 @@ namespace AlloyTemplates.Helpers
 
                 helper.ViewContext.Writer.Write(linkTag.ToString(TagRenderMode.StartTag));
             }
+
             return new ConditionalLink(helper.ViewContext, shouldWriteLink);
         }
 

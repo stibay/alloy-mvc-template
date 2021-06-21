@@ -1,11 +1,11 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Globalization;
 using EPiServer.ServiceLocation;
 using EPiServer.Web.Routing;
-using EPiServer;
 
 namespace AlloyTemplates.Helpers
 {
@@ -59,9 +59,12 @@ namespace AlloyTemplates.Helpers
 
         public static RouteValueDictionary GetPageRoute(this RequestContext requestContext, ContentReference contentLink)
         {
-            var values = new RouteValueDictionary();
-            values[RoutingConstants.NodeKey] = contentLink;
-            values[RoutingConstants.LanguageKey] = ContentLanguage.PreferredCulture.Name;
+            var values = new RouteValueDictionary
+            {
+                [RoutingConstants.NodeKey] = contentLink,
+                [RoutingConstants.LanguageKey] = ContentLanguage.PreferredCulture.Name
+            };
+
             return values;
         }
     }

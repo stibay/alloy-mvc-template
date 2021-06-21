@@ -1,10 +1,10 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using AlloyTemplates.Models.Media;
 using AlloyTemplates.Models.ViewModels;
+using EPiServer.Core;
 using EPiServer.Web.Mvc;
 using EPiServer.Web.Routing;
-using System;
-using EPiServer.Core;
 
 namespace AlloyTemplates.Controllers
 {
