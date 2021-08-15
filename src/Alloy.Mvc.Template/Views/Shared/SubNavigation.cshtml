@@ -7,6 +7,7 @@
             <i class="@(firstLevelItem.HasChildren.Value ? "icon-chevron-down right" : "right")"></i>
         </a>
     </div>
+
     <div id="collapse-@firstLevelItem.Page.ContentLink.ID" class="accordion-body collapse @(firstLevelItem.Selected ? "in" : "")">
         <ul>
             @Html.MenuList(firstLevelItem.Page.ContentLink, SubLevelItemTemplate)

@@ -8,6 +8,7 @@
         <BuildDependsOn>CopyTemplatesSourceFiles;ReplaceNamespacesSourceFiles;$(BuildDependsOn)</BuildDependsOn>
         <CoreCleanDependsOn>$(CoreCleanDependsOn);CleanTemplatesSourceFiles</CoreCleanDependsOn>
     </PropertyGroup>
+    
 
     <Target Condition="$(BuildNugetPackage) == 'true'" Name="CleanTemplatesSourceFiles">
         <RemoveDir Directories="$(OutDir)\NugetSources" />
