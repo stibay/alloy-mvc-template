@@ -21,15 +21,13 @@ namespace AlloyTemplates.Models.Pages
     public class ProductPage : StandardPage, IHasRelatedContent
     {
         [Required]
+        [CultureSpecific]
         [Display(Order = 305)]
         [UIHint(Global.SiteUIHints.StringsCollection)]
-        [CultureSpecific]
         public virtual IList<string> UniqueSellingPoints { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 330)]
         [CultureSpecific]
+        [Display(Order = 330)]
         [AllowedTypes(new[] { typeof(IContentData) },new[] { typeof(JumbotronBlock) })]
         public virtual ContentArea RelatedContentArea { get; set; }
     }

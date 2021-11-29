@@ -1,7 +1,6 @@
-﻿using EPiServer.Core;
-using EPiServer.DataAbstraction;
+﻿using System.ComponentModel.DataAnnotations;
+using EPiServer.Core;
 using EPiServer.DataAnnotations;
-using System.ComponentModel.DataAnnotations;
 
 namespace AlloyTemplates.Models.Pages
 {
@@ -12,15 +11,11 @@ namespace AlloyTemplates.Models.Pages
     [SiteImageUrl(Global.StaticGraphicsFolderPath + "page-type-thumbnail-standard.png")]
     public class StandardPage : SitePageData
     {
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 310)]
         [CultureSpecific]
+        [Display(Order = 310)]
         public virtual XhtmlString MainBody { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 320)]
+        [Display(Order = 320)]
         public virtual ContentArea MainContentArea { get; set; }
     }
 }

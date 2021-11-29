@@ -20,17 +20,15 @@ namespace AlloyTemplates.Models.Blocks
         /// Gets the site logotype URL
         /// </summary>
         /// <remarks>If not specified a default logotype will be used</remarks>
-        [DefaultDragAndDropTarget]
         [UIHint(UIHint.Image)]
+        [DefaultDragAndDropTarget]
         public virtual Url Url
         {
             get
             {
                 var url = this.GetPropertyValue(b => b.Url);
 
-                return url == null || url.IsEmpty()
-                            ? new Url("/Static/gfx/logotype.png")
-                            : url;
+                return url == null || url.IsEmpty() ? new Url("/Static/gfx/logotype.png") : url;
             }
             set
             {

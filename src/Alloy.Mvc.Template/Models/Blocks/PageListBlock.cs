@@ -14,64 +14,44 @@ namespace AlloyTemplates.Models.Blocks
     [SiteImageUrl]
     public class PageListBlock : SiteBlockData
     {
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 1)]
         [CultureSpecific]
+        [Display(Order = 10)]
         public virtual string Heading { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 2)]
         [DefaultValue(false)]
+        [Display(Order = 20)]
         public virtual bool IncludePublishDate { get; set; }
 
         /// <summary>
         /// Gets or sets whether a page introduction/description should be included in the list
         /// </summary>
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 3)]
         [DefaultValue(true)]
+        [Display(Order = 30)]
         public virtual bool IncludeIntroduction { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 4)]
-        [DefaultValue(3)]
         [Required]
+        [DefaultValue(3)]
+        [Display(Order = 40)]
         public virtual int Count { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 4)]
-        [DefaultValue(FilterSortOrder.PublishedDescending)]
+        [Display(Order = 50)]
         [UIHint("SortOrder")]
         [BackingType(typeof(PropertyNumber))]
+        [DefaultValue(FilterSortOrder.PublishedDescending)]
         public virtual FilterSortOrder SortOrder { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 5)]
         [Required]
+        [Display(Order = 60)]
         public virtual PageReference Root { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 6)]
+        [Display(Order = 70)]
         public virtual PageType PageTypeFilter{get; set;}
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 7)]
+        [Display(Order = 80)]
         public virtual CategoryList CategoryFilter { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 8)]
+        [Display(Order = 90)]
         public virtual bool Recursive { get; set; }
-
-        #region IInitializableContent
 
         /// <summary>
         /// Sets the default property values on the content data.
@@ -86,7 +66,5 @@ namespace AlloyTemplates.Models.Blocks
             IncludePublishDate = false;
             SortOrder = FilterSortOrder.PublishedDescending;
         }
-
-        #endregion
     }
 }

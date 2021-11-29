@@ -14,10 +14,8 @@ namespace AlloyTemplates.Models.Pages
     [SiteImageUrl]
     public class LandingPage : SitePageData
     {
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order=310)]
         [CultureSpecific]
+        [Display(Order = 310)]
         public virtual ContentArea MainContentArea { get; set; }
 
         public override void SetDefaultValues(ContentType contentType)

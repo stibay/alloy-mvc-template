@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using AlloyTemplates.Models.Blocks;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
-using AlloyTemplates.Models.Blocks;
 
 namespace AlloyTemplates.Models.Pages
 {
@@ -20,10 +20,8 @@ namespace AlloyTemplates.Models.Pages
         ExcludeOn = new[] { typeof(ContainerPage), typeof(ProductPage), typeof(StandardPage), typeof(ISearchPage), typeof(LandingPage) })] // ...and underneath those we can't create additional start pages
     public class StartPage : SitePageData
     {
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 320)]
         [CultureSpecific]
+        [Display(Order = 320)]
         public virtual ContentArea MainContentArea { get; set; }
 
         [Display(GroupName = Global.GroupNames.SiteSettings, Order = 300)]

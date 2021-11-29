@@ -11,6 +11,5 @@ namespace AlloyTemplates.Models.Pages
     [SiteImageUrl]
     public class ContainerPage : SitePageData, IContainerPage
     {
-
     }
 }

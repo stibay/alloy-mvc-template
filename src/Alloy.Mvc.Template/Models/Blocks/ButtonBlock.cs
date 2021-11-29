@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using EPiServer.DataAbstraction;
 using EPiServer;
 
 namespace AlloyTemplates.Models.Blocks
@@ -11,12 +10,12 @@ namespace AlloyTemplates.Models.Blocks
     [SiteImageUrl]
     public class ButtonBlock : SiteBlockData
     {
-        [Display(Order = 1, GroupName = SystemTabNames.Content)]
         [Required]
+        [Display(Order = 10)]
         public virtual string ButtonText { get; set; }
 
-        [Display(Order = 2, GroupName = SystemTabNames.Content)]
         [Required]
+        [Display(Order = 20)]
         public virtual Url ButtonLink { get; set; }
     }
 }

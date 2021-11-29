@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using EPiServer;
 using EPiServer.Core;
-using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Web;
-using EPiServer;
 
 namespace AlloyTemplates.Models.Blocks
 {
@@ -15,38 +14,28 @@ namespace AlloyTemplates.Models.Blocks
     [SiteImageUrl]
     public class ContactBlock : SiteBlockData
     {
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 1)]
         [CultureSpecific]
+        [Display(Order = 10)]
         [UIHint(UIHint.Image)]
         public virtual ContentReference Image { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 2)]
         [CultureSpecific]
+        [Display(Order = 20)]
         public virtual string Heading { get; set; }
 
         /// <summary>
         /// Gets or sets the contact page from which contact information should be retrieved
         /// </summary>
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 3)]
+        [Display(Order = 30)]
         [UIHint(Global.SiteUIHints.Contact)]
         public virtual PageReference ContactPageLink { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 4)]
         [CultureSpecific]
+        [Display(Order = 40)]
         public virtual string LinkText { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 5)]
         [CultureSpecific]
+        [Display(Order = 50)]
         public virtual Url LinkUrl { get; set; }
     }
 }

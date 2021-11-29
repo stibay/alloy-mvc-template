@@ -15,9 +15,7 @@ namespace AlloyTemplates.Models.Pages
     [SiteImageUrl]
     public class NewsPage : StandardPage
     {
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 305)]
+        [Display(Order = 305)]
         public virtual PageListBlock NewsList { get; set; }
 
         public override void SetDefaultValues(ContentType contentType)

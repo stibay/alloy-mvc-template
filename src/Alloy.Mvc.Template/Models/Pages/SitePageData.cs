@@ -13,10 +13,8 @@ namespace AlloyTemplates.Models.Pages
     /// </summary>
     public abstract class SitePageData : PageData, ICustomCssInContentArea
     {
-        [Display(
-            GroupName = Global.GroupNames.MetaData,
-            Order = 100)]
         [CultureSpecific]
+        [Display(GroupName = Global.GroupNames.MetaData, Order = 100)]
         public virtual string MetaTitle
         {
             get
@@ -31,36 +29,26 @@ namespace AlloyTemplates.Models.Pages
             set { this.SetPropertyValue(p => p.MetaTitle, value); }
         }
 
-        [Display(
-            GroupName = Global.GroupNames.MetaData,
-            Order = 200)]
         [CultureSpecific]
+        [Display(GroupName = Global.GroupNames.MetaData, Order = 200)]
         [BackingType(typeof(PropertyStringList))]
         public virtual string[] MetaKeywords { get; set; }
 
-        [Display(
-            GroupName = Global.GroupNames.MetaData,
-            Order = 300)]
         [CultureSpecific]
+        [Display(GroupName = Global.GroupNames.MetaData, Order = 300)]
         [UIHint(UIHint.Textarea)]
         public virtual string MetaDescription { get; set; }
 
-        [Display(
-            GroupName = Global.GroupNames.MetaData,
-            Order = 400)]
         [CultureSpecific]
+        [Display(GroupName = Global.GroupNames.MetaData, Order = 400)]
         public virtual bool DisableIndexing { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 100)]
         [UIHint(UIHint.Image)]
+        [Display(Order = 100)]
         public virtual ContentReference PageImage { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 200)]
         [CultureSpecific]
+        [Display(Order = 200)]
         [UIHint(UIHint.Textarea)]
         public virtual string TeaserText
         {
@@ -69,23 +57,17 @@ namespace AlloyTemplates.Models.Pages
                 var teaserText = this.GetPropertyValue(p => p.TeaserText);
 
                 // Use explicitly set teaser text, otherwise fall back to description
-                return !string.IsNullOrWhiteSpace(teaserText)
-                        ? teaserText
-                        : MetaDescription;
+                return !string.IsNullOrWhiteSpace(teaserText) ? teaserText : MetaDescription;
             }
             set { this.SetPropertyValue(p => p.TeaserText, value); }
         }
 
-        [Display(
-            GroupName = SystemTabNames.Settings,
-            Order = 200)]
         [CultureSpecific]
+        [Display(GroupName = SystemTabNames.Settings, Order = 200)]
         public virtual bool HideSiteHeader { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Settings,
-            Order = 300)]
         [CultureSpecific]
+        [Display(GroupName = SystemTabNames.Settings, Order = 300)]
         public virtual bool HideSiteFooter { get; set; }
 
         public string ContentAreaCssClass => "teaserblock";

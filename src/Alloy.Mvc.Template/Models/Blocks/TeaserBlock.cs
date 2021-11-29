@@ -14,31 +14,23 @@ namespace AlloyTemplates.Models.Blocks
     public class TeaserBlock : SiteBlockData
     {
         [CultureSpecific]
+        [Display(Order = 10)]
         [Required(AllowEmptyStrings = false)]
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 1)]
         public virtual string Heading { get; set; }
 
         [CultureSpecific]
-        [Required(AllowEmptyStrings = false)]
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 2)]
+        [Display(Order = 20)]
         [UIHint(UIHint.Textarea)]
+        [Required(AllowEmptyStrings = false)]
         public virtual string Text { get; set; }
 
         [CultureSpecific]
-        [Required(AllowEmptyStrings = false)]
+        [Display(Order = 30)]
         [UIHint(UIHint.Image)]
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 3)]
+        [Required(AllowEmptyStrings = false)]
         public virtual ContentReference Image { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 4)]
+        [Display(Order = 40)]
         public virtual PageReference Link { get; set; }
     }
 }

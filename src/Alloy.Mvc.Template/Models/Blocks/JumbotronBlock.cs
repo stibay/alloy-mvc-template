@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using EPiServer.DataAbstraction;
+using EPiServer;
+using EPiServer.Core;
 using EPiServer.DataAnnotations;
 using EPiServer.Web;
-using EPiServer.Core;
-using EPiServer;
 
 namespace AlloyTemplates.Models.Blocks
 {
@@ -16,22 +15,16 @@ namespace AlloyTemplates.Models.Blocks
     [SiteImageUrl]
     public class JumbotronBlock : SiteBlockData
     {
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 1
-            )]
         [CultureSpecific]
+        [Display(Order = 10)]
         [UIHint(UIHint.Image)]
         public virtual ContentReference Image { get; set; }
 
         /// <summary>
         /// Gets or sets a description for the image, for example used as the alt text for the image when rendered
         /// </summary>
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 1
-            )]
         [CultureSpecific]
+        [Display(Order = 20)]
         [UIHint(UIHint.Textarea)]
         public virtual string ImageDescription
         {
@@ -45,36 +38,24 @@ namespace AlloyTemplates.Models.Blocks
             set { this["ImageDescription"] = value; }
         }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 1
-            )]
         [CultureSpecific]
+        [Display(Order = 30)]
         public virtual string Heading { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 2
-            )]
         [CultureSpecific]
+        [Display(Order = 40)]
         [UIHint(UIHint.Textarea)]
         public virtual string SubHeading { get; set; }
 
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 3
-            )]
-        [CultureSpecific]
         [Required]
+        [CultureSpecific]
+        [Display(Order = 50)]
         public virtual string ButtonText { get; set; }
 
         //The link must be required as an anchor tag requires an href in order to be valid and focusable
-        [Display(
-            GroupName = SystemTabNames.Content,
-            Order = 4
-            )]
-        [CultureSpecific]
         [Required]
+        [CultureSpecific]
+        [Display(Order = 60)]
         public virtual Url ButtonLink { get; set; }
     }
 }
